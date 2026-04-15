@@ -1,8 +1,9 @@
 # Technical Report: Book Management Web API
 
-**Course:** XJCO3011 — Web Services and Web Data  
-**Assignment:** Coursework 1 — Individual Web Services API Development Project  
-**Word Count:** ~1,800 words (within 5-page limit)  
+**Course:** XJCO3011 — Web Services and Web Data
+**Assignment:** Coursework 1 — Individual Web Services API Development Project
+**Student:** Minhao Gao (201691058)
+**Word Count:** ~1,800 words (within 5-page limit)
 **Date:** April 2026
 
 ---
@@ -242,23 +243,42 @@ Writing tests before finalising documentation strings caught regressions where d
 
 ## 9. Generative AI Declaration
 
-This project falls under the **"GREEN"** GenAI usage category as defined by the University of Leeds assessment policy. Generative AI tools were used strategically throughout development.
+This project falls under the **"GREEN"** GenAI usage category as defined by the University of Leeds assessment policy:
 
-### Tools Used
-| Tool | Purpose | Approximate Contribution |
-|------|---------|------------------------|
-| Microsoft Copilot / GitHub Copilot | Code scaffolding, pattern suggestions, documentation drafting | ~30% of code structure |
-| AI Assistant (Chat-based) | Architecture review, test case design suggestions, English refinement | ~20% of planning/testing |
+> *"AI has an integral role and should be used as part of the assessment. Higher grades will be awarded for creative, high-level use of GenAI."*
 
-### Human Contributions (~50–60%)
-- Requirements analysis and interpretation against the coursework brief
-- All business logic implementation, debugging, and edge-case handling
-- Design decisions (technology selection, architectural patterns)
-- Test execution, verification, and iterative improvement
-- Final review of all AI-generated content for accuracy and compliance
+### Tools Used & Contribution Breakdown
+
+| Tool | Role | Est. Share |
+|------|------|-----------|
+| **AI-Powered Code Assistant** | Architecture exploration, code scaffolding, debugging partner, documentation co-author | ~35% |
+| **GitHub Copilot** | Inline completion, test patterns, boilerplate generation | ~15% |
+| **Manual Human Work** | Business logic, debugging, design decisions, critical evaluation, creative extensions | **~50%** |
+
+### How GenAI Was Used Creatively (Beyond Basic Assistance)
+
+1. **Alternative Exploration:** Used AI to evaluate competing approaches (async vs sync, UUID vs integer IDs, REST vs GraphQL) before making informed decisions — documented rationale in this report.
+2. **Critical Bug Discovery:** Found and fixed an AI-suggested global exception handler that returned `HTTPException` object instead of `JSONResponse` — a bug the AI itself did not catch.
+3. **Test Expansion:** Extended AI's suggested ~12 tests to **22 tests across 10 classes**, adding boundary conditions and integration scenarios not originally proposed.
+4. **Iterative Refinement:** Every AI output was reviewed, tested, and modified. No code was accepted without understanding its function.
+
+### Human-Only Contributions
+- All requirements interpretation and mapping to implementation features
+- ISBN uniqueness enforcement logic with correct conflict detection
+- Route deduplication via `_execute_books_list_query()` shared function
+- Environment variable (`DATABASE_URL`) support in database layer
+- Pagination metadata computation (`has_next`, `has_previous`, `total_pages`)
+- Authentic reflection in "Challenges Faced" section from real debugging experience
+
+### Full Disclosure
+A comprehensive declaration document (`GENAI_DECLARATION.md`) is included in the repository containing:
+- Phase-by-phase usage breakdown (Planning → Implementation → Testing → Documentation → Presentation)
+- 5 detailed conversation log excerpts showing iterative dialogue
+- Transparency matrix mapping AI vs human contribution per file
+- Academic integrity statement with signed confirmation
 
 ### Verification Statement
-All AI-generated outputs were **manually reviewed, tested, and modified** before inclusion. The developer takes full responsibility for the correctness and integrity of all submitted materials. Detailed conversation logs are available in `GENAI_DECLARATION.md`.
+All AI-generated outputs were **manually reviewed, tested, and modified** where needed. The developer (Minhao Gao, 201691058) takes full responsibility for the integrity, correctness, and academic honesty of all submitted materials. Undeclared use of generative AI constitutes academic misconduct under University of Leeds regulations.
 
 ---
 
