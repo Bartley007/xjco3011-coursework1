@@ -62,6 +62,24 @@ docker build -t book-api .
 docker run -p 8000:8000 book-api
 ```
 
+### 🌐 Live Deployment
+
+The API is currently **deployed and publicly accessible** on a cloud server:
+
+| Item | URL |
+|------|-----|
+| **Swagger UI (Interactive Docs)** | http://85.137.244.136:8000/docs |
+| **ReDoc (Alternative Docs)** | http://85.137.244.136:8000/redoc |
+| **Health Check** | http://85.137.244.136:8000/health |
+| **Books API** | http://85.137.244.136:8000/api/v1/books |
+
+**Server Details:**
+- Location: Hong Kong
+- OS: CentOS 7 + Docker 26.1.4
+- Runtime: Uvicorn in Docker container
+- Database: SQLite (pre-loaded with 12 sample books)
+- Status: ✅ Running and publicly accessible
+
 ## Testing
 
 ```bash
